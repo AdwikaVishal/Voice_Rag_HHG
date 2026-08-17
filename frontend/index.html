@@ -3,17 +3,46 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Voice RAG</title>
+  <title>HH Goa 2026 — Voice RAG</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="app">
-    <h1>Voice RAG</h1>
-    <p class="tagline">Ask by voice — get a spoken, grounded answer.</p>
+  <div class="shell">
+    <!-- Top Bar -->
+    <header class="topbar">
+      <a href="/" class="topbar__brand">
+        <span class="topbar__wordmark">
+          Voice <em>RAG</em>
+        </span>
+      </a>
+      <div class="topbar__meta">
+        Bilingual Voice QA &middot; Open Source
+        <br />
+        English &amp; Urdu
+      </div>
+    </header>
 
+    <!-- Hero -->
+    <section class="hero">
+      <span class="hero__kicker">Voice RAG</span>
+      <h1 class="hero__title">
+        VOICE <em>RAG</em>.
+      </h1>
+      <p class="hero__subtitle">Ask by voice — get a spoken, grounded answer.</p>
+      <p class="hero__copy">
+        Speak your question in English or Urdu. The system transcribes,
+        retrieves context, generates a grounded answer, and speaks it back.
+        100% open-source pipeline.
+      </p>
+      <p class="hero__privacy">
+        🔒 Audio processed locally &middot; open-source stack
+      </p>
+    </section>
+
+    <!-- Controls -->
     <section class="controls">
-      <button id="mic-btn" class="btn btn-primary" disabled>🎤 Start Recording</button>
-      <button id="play-btn" class="btn" disabled>🔊 Play Again</button>
+      <button id="mic-btn" class="btn btn--yellow btn--block" disabled>🎤 Start Recording</button>
+      <button id="play-btn" class="btn btn--cream btn--block" disabled>🔊 Play Again</button>
 
       <div class="row">
         <label for="lang">Language
@@ -23,30 +52,38 @@
             <option value="ur">Urdu</option>
           </select>
         </label>
-        <label for="file-input" class="btn btn-ghost">📁 Upload Audio</label>
+        <label for="file-input" class="btn btn--sm btn-ghost">📁 Upload Audio</label>
         <input id="file-input" type="file" accept="audio/*,.webm,.ogg" hidden />
       </div>
     </section>
 
+    <!-- Status -->
     <p id="status" class="status idle">Status: Idle</p>
     <p id="error" class="error" hidden></p>
 
+    <!-- Result -->
     <section id="result" class="result" hidden>
       <div class="card">
-        <h2>You said</h2>
-        <p id="transcript" class="transcript"></p>
-        <h2>Answer</h2>
-        <p id="answer" class="answer"></p>
-        <p id="grounding" class="grounding"></p>
-        <p id="notice" class="notice" hidden></p>
-        <div id="sources-block" hidden>
+        <div class="card__section">
+          <div class="card__label">You said</div>
+          <p id="transcript" class="transcript"></p>
+        </div>
+        <div class="card__section">
+          <div class="card__label">Answer</div>
+          <p id="answer" class="answer"></p>
+          <p id="grounding" class="grounding"></p>
+          <p id="notice" class="notice" hidden></p>
+        </div>
+        <div id="sources-block" class="card__section" hidden>
           <h2>Sources</h2>
           <ul id="sources" class="sources"></ul>
         </div>
-        <p id="timings" class="timings"></p>
+        <div class="card__section">
+          <p id="timings" class="timings"></p>
+        </div>
       </div>
     </section>
-  </main>
+  </div>
 
   <script src="app.js"></script>
 </body>

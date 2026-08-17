@@ -7,27 +7,27 @@
   "results": [
     {
       "texts": 100,
-      "total_seconds": 1.559,
-      "texts_per_second": 64.16,
-      "milliseconds_per_text": 15.59
+      "total_seconds": 2.075,
+      "texts_per_second": 48.2,
+      "milliseconds_per_text": 20.75
     },
     {
       "texts": 500,
-      "total_seconds": 7.853,
-      "texts_per_second": 63.67,
-      "milliseconds_per_text": 15.71
+      "total_seconds": 10.529,
+      "texts_per_second": 47.49,
+      "milliseconds_per_text": 21.06
     },
     {
       "texts": 1000,
-      "total_seconds": 16.062,
-      "texts_per_second": 62.26,
-      "milliseconds_per_text": 16.06
+      "total_seconds": 20.371,
+      "texts_per_second": 49.09,
+      "milliseconds_per_text": 20.37
     }
   ],
   "note": "steady-state throughput measured on the fixed-strategy chunk texts; the first (smallest) entry includes model load + warmup",
   "auto_reduce": {
     "reduced_sample": false,
     "reason": "",
-    "estimated_sample_seconds": 160.6
+    "estimated_sample_seconds": 203.7
   }
 }
