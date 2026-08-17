@@ -1,0 +1,18 @@
+# Secrets
+.env
+*.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Downloads / artifacts
+data/raw/
+
+# Generated TTS test artifacts (regenerate with scripts/test_tts.py)
+data/audio/tts_test_*.wav
+
+# Logs / scratch
+*.log

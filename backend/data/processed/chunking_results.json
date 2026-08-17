@@ -1,0 +1,62 @@
+{
+  "dataset": "ai4bharat/MSMARCO-XI",
+  "input_records": 5000,
+  "input_passages": 49985,
+  "languages_observed": [
+    "eng_Latn",
+    "urd_Arab"
+  ],
+  "chunk_size": 256,
+  "overlap": 0.2,
+  "text_field": "both",
+  "strategies": {
+    "fixed": {
+      "records": 5000,
+      "passages": 49985,
+      "chunks": 100918,
+      "avg_tokens": 59.52,
+      "median_tokens": 54.0,
+      "min_tokens": 1,
+      "max_tokens": 256,
+      "chunks_per_passage_avg": 2.019,
+      "chunks_per_passage_median": 2,
+      "processing_ms": 3884.073
+    },
+    "metadata": {
+      "records": 5000,
+      "passages": 49985,
+      "chunks": 100258,
+      "avg_tokens": 59.43,
+      "median_tokens": 54.0,
+      "min_tokens": 1,
+      "max_tokens": 4028,
+      "chunks_per_passage_avg": 2.006,
+      "chunks_per_passage_median": 2,
+      "processing_ms": 7726.268
+    },
+    "recursive": {
+      "records": 5000,
+      "passages": 49985,
+      "chunks": 100783,
+      "avg_tokens": 59.12,
+      "median_tokens": 54,
+      "min_tokens": 1,
+      "max_tokens": 256,
+      "chunks_per_passage_avg": 2.016,
+      "chunks_per_passage_median": 2,
+      "processing_ms": 4316.572
+    },
+    "sentence": {
+      "records": 5000,
+      "passages": 49985,
+      "chunks": 100258,
+      "avg_tokens": 59.43,
+      "median_tokens": 54.0,
+      "min_tokens": 1,
+      "max_tokens": 4028,
+      "chunks_per_passage_avg": 2.006,
+      "chunks_per_passage_median": 2,
+      "processing_ms": 7658.183
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Voice RAG</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>Voice RAG</h1>
+    <p class="tagline">Ask by voice — get a spoken, grounded answer.</p>
+
+    <section class="controls">
+      <button id="mic-btn" class="btn btn-primary" disabled>🎤 Start Recording</button>
+      <button id="play-btn" class="btn" disabled>🔊 Play Again</button>
+
+      <div class="row">
+        <label for="lang">Language
+          <select id="lang">
+            <option value="">Auto</option>
+            <option value="en">English</option>
+            <option value="ur">Urdu</option>
+          </select>
+        </label>
+        <label for="file-input" class="btn btn-ghost">📁 Upload Audio</label>
+        <input id="file-input" type="file" accept="audio/*,.webm,.ogg" hidden />
+      </div>
+    </section>
+
+    <p id="status" class="status idle">Status: Idle</p>
+    <p id="error" class="error" hidden></p>
+
+    <section id="result" class="result" hidden>
+      <div class="card">
+        <h2>You said</h2>
+        <p id="transcript" class="transcript"></p>
+        <h2>Answer</h2>
+        <p id="answer" class="answer"></p>
+        <p id="grounding" class="grounding"></p>
+        <p id="notice" class="notice" hidden></p>
+        <div id="sources-block" hidden>
+          <h2>Sources</h2>
+          <ul id="sources" class="sources"></ul>
+        </div>
+        <p id="timings" class="timings"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

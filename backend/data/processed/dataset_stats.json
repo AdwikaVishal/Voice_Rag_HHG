@@ -1,0 +1,22 @@
+{
+  "dataset": "ai4bharat/MSMARCO-XI",
+  "source_split": "validation",
+  "source_file": "validation/urdval.parquet",
+  "source_language": "urd",
+  "source_rows_total": 97941,
+  "source_sha256": null,
+  "max_records_target": 5000,
+  "records_processed": 5000,
+  "records_saved": 5000,
+  "records_removed": 0,
+  "passage_count": 49985,
+  "selected_passage_count": 3359,
+  "records_with_selected": 3222,
+  "unique_query_ids": 4999,
+  "languages_observed": [
+    "eng_Latn",
+    "urd_Arab"
+  ],
+  "output_file": "data/processed/msmarco_xi_sample.jsonl",
+  "created_at": "2026-08-17T07:10:15+00:00"
+}

@@ -1,0 +1,50 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Secrets
+.env
+*.env
+.env.*
+!.env.example
+
+# Datasets / large data files
+data/raw/
+*.parquet
+
+# Local samples (may be committed only if reasonably sized)
+# data/processed/msmarco_xi_sample.jsonl
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+cat > .gitignore <<'EOF'
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Generated retrieval data
+backend/data/indexes/
+backend/data/processed/chunks/
+
+# Generated evaluation/output files
+backend/data/processed/retrieval_results.json
+backend/data/processed/benchmark_manifest.json
+
+# Audio generated/test artifacts
+backend/data/audio/*.mp3
+backend/data/audio/*.wav
+
+# macOS
+.DS_Store
+EOF

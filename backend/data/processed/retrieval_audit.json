@@ -1,0 +1,179 @@
+{
+  "index_dir": "/Users/apple/voice-rag/backend/data/indexes/recursive",
+  "chunks": 100783,
+  "model": "intfloat/multilingual-e5-small",
+  "top_k": 10,
+  "rows": [
+    {
+      "label": "A1",
+      "query": "What is CDG airport?",
+      "language": "eng_Latn",
+      "detected_language": "eng_Latn",
+      "evidence_record_passage": [
+        "msmarco_xi_000917",
+        3
+      ],
+      "evidence_chunk_ids": [
+        "msmarco_xi_000917::3::eng_Latn::0",
+        "msmarco_xi_000917::3::urd_Arab::0"
+      ],
+      "evidence_present": true,
+      "bm25_rank": 1,
+      "dense_rank": 1,
+      "hybrid_rank": 1,
+      "status": "PASS",
+      "bm25_top1": 27.377896380999438,
+      "dense_top1": 0.8769848346710205,
+      "hybrid_top1": 0.03278688524590164,
+      "hybrid_top1_text": "Which airport is CDG? CDG is officially named Roissy Charles de Gaulle, and is located in the city of Paris. Over 115 ai"
+    },
+    {
+      "label": "A2",
+      "query": "Which airport serves Paris and is abbreviated as CDG?",
+      "language": "eng_Latn",
+      "detected_language": "eng_Latn",
+      "evidence_record_passage": [
+        "msmarco_xi_000917",
+        3
+      ],
+      "evidence_chunk_ids": [
+        "msmarco_xi_000917::3::eng_Latn::0",
+        "msmarco_xi_000917::3::urd_Arab::0"
+      ],
+      "evidence_present": true,
+      "bm25_rank": 1,
+      "dense_rank": 1,
+      "hybrid_rank": 1,
+      "status": "PASS",
+      "bm25_top1": 38.999535201097984,
+      "dense_top1": 0.89336758852005,
+      "hybrid_top1": 0.03278688524590164,
+      "hybrid_top1_text": "Which airport is CDG? CDG is officially named Roissy Charles de Gaulle, and is located in the city of Paris. Over 115 ai"
+    },
+    {
+      "label": "A3",
+      "query": "سی ڈی جی ہوائی اڈا کیا ہے؟",
+      "language": "urd_Arab",
+      "detected_language": "urd_Arab",
+      "evidence_record_passage": [
+        "msmarco_xi_000917",
+        3
+      ],
+      "evidence_chunk_ids": [
+        "msmarco_xi_000917::3::eng_Latn::0",
+        "msmarco_xi_000917::3::urd_Arab::0"
+      ],
+      "evidence_present": true,
+      "bm25_rank": null,
+      "dense_rank": 1,
+      "hybrid_rank": 6,
+      "status": "PASS",
+      "bm25_top1": 32.157463927689065,
+      "dense_top1": 0.8906062841415405,
+      "hybrid_top1": 0.03125,
+      "hybrid_top1_text": "چارلس ڈی گال بین الاقوامی ہوائی اڈے (سی ڈی جی) اور ڈیجن کے درمیان فاصلہ 262.71 کلومیٹر ہے۔ 163.24 میل۔ چارلس ڈی گال بین "
+    },
+    {
+      "label": "D1",
+      "query": "What is the capital of France?",
+      "language": "eng_Latn",
+      "detected_language": "eng_Latn",
+      "evidence_record_passage": null,
+      "evidence_chunk_ids": null,
+      "evidence_present": false,
+      "bm25_rank": null,
+      "dense_rank": null,
+      "hybrid_rank": null,
+      "status": "NO-EVIDENCE",
+      "bm25_top1": 17.430502524093367,
+      "dense_top1": 0.8407256603240967,
+      "hybrid_top1": 0.03252247488101534,
+      "hybrid_top1_text": "In May 1682, Louis moved the capital of France to Versailles, 12 miles away of Paris. It was Louis XIV's motive to remov"
+    },
+    {
+      "label": "D2",
+      "query": "Who invented the telephone?",
+      "language": "eng_Latn",
+      "detected_language": "eng_Latn",
+      "evidence_record_passage": null,
+      "evidence_chunk_ids": null,
+      "evidence_present": false,
+      "bm25_rank": null,
+      "dense_rank": null,
+      "hybrid_rank": null,
+      "status": "NO-EVIDENCE",
+      "bm25_top1": 14.365698461837072,
+      "dense_top1": 0.8390549421310425,
+      "hybrid_top1": 0.032266458495966696,
+      "hybrid_top1_text": "Telephone numbers in the United Kingdom are administered by the UK government's Office of Communications. For this purpo"
+    },
+    {
+      "label": "E1",
+      "query": "What is the weather in Tokyo today?",
+      "language": "eng_Latn",
+      "detected_language": "eng_Latn",
+      "evidence_record_passage": null,
+      "evidence_chunk_ids": null,
+      "evidence_present": false,
+      "bm25_rank": null,
+      "dense_rank": null,
+      "hybrid_rank": null,
+      "status": "NO-EVIDENCE",
+      "bm25_top1": 19.772811619859436,
+      "dense_top1": 0.846253514289856,
+      "hybrid_top1": 0.024393871783430016,
+      "hybrid_top1_text": "Weather Today/Tomorrow Hour-by-Hour Forecast 14 Day Forecast Yesterday/Past Weather Climate (Averages)"
+    },
+    {
+      "label": "E2",
+      "query": "Recipe for chocolate chip cookies?",
+      "language": "eng_Latn",
+      "detected_language": "eng_Latn",
+      "evidence_record_passage": null,
+      "evidence_chunk_ids": null,
+      "evidence_present": false,
+      "bm25_rank": null,
+      "dense_rank": null,
+      "hybrid_rank": null,
+      "status": "NO-EVIDENCE",
+      "bm25_top1": 26.932914919359526,
+      "dense_top1": 0.8433015942573547,
+      "hybrid_top1": 0.03252247488101534,
+      "hybrid_top1_text": "You definitely need to try a Nanaimo bar, which is one of the most common desserts in Canada. There are a lot of variati"
+    },
+    {
+      "label": "E3",
+      "query": "How do I fix a leaking faucet?",
+      "language": "eng_Latn",
+      "detected_language": "eng_Latn",
+      "evidence_record_passage": null,
+      "evidence_chunk_ids": null,
+      "evidence_present": false,
+      "bm25_rank": null,
+      "dense_rank": null,
+      "hybrid_rank": null,
+      "status": "NO-EVIDENCE",
+      "bm25_top1": 28.592328253837557,
+      "dense_top1": 0.8756075501441956,
+      "hybrid_top1": 0.0315136476426799,
+      "hybrid_top1_text": "All About Delta Diamond Seal Technology. Most kitchen and bathroom faucets are replaced for one of two reasons. Either t"
+    },
+    {
+      "label": "E4",
+      "query": "کیا آپ مجھے ایک مزیدار کیک بنانے کا طریقہ بتا سکتے ہیں؟",
+      "language": "urd_Arab",
+      "detected_language": "urd_Arab",
+      "evidence_record_passage": null,
+      "evidence_chunk_ids": null,
+      "evidence_present": false,
+      "bm25_rank": null,
+      "dense_rank": null,
+      "hybrid_rank": null,
+      "status": "NO-EVIDENCE",
+      "bm25_top1": 26.16678244677674,
+      "dense_top1": 0.872043251991272,
+      "hybrid_top1": 0.03177805800756621,
+      "hybrid_top1_text": "جب میری بیٹی نے مجھے انسٹاگرام پر ایک گرم فج چاکلیٹ پڈنگ کیک کی تصویر میں ٹیگ کیا تو یہ پہلی نظر میں ہی محبت تھی۔ دل کی "
+    }
+  ]
+}
