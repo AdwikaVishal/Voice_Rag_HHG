@@ -20,6 +20,7 @@ if str(BASE_DIR) not in sys.path:
 
 from app.config import STT_COMPUTE_TYPE, STT_DEVICE, STT_MODEL_SIZE  # noqa: E402
 from app.stt import STTService, TranscriptionResult  # noqa: E402
+from app.stt.faster_whisper_provider import FasterWhisperProvider  # noqa: E402
 
 WAV_BYTES = b"RIFFfake-wav-bytes-for-tests"
 
@@ -66,7 +67,7 @@ class FakeWhisperModel:
 class TestSTTService(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.patcher = mock.patch("app.stt.service.WhisperModel", FakeWhisperModel)
+        cls.patcher = mock.patch("app.stt.faster_whisper_provider.WhisperModel", FakeWhisperModel)
         cls.patcher.start()
 
     @classmethod
@@ -83,6 +84,9 @@ class TestSTTService(unittest.TestCase):
         FakeWhisperModel.last_path = None
         FakeWhisperModel.last_language = None
 
+    def _make_provider(self, **kwargs) -> FasterWhisperProvider:
+        return FasterWhisperProvider(**kwargs)
+
     def test_init_is_lazy(self):
         svc = STTService()
         self.assertFalse(svc.is_loaded)
@@ -90,10 +94,10 @@ class TestSTTService(unittest.TestCase):
         self.assertEqual(FakeWhisperModel.instances, 0)  # model not built yet
 
     def test_config_defaults(self):
-        svc = STTService()
-        self.assertEqual(svc.model_size, STT_MODEL_SIZE)
-        self.assertEqual(svc.device, STT_DEVICE)
-        self.assertEqual(svc.compute_type, STT_COMPUTE_TYPE)
+        provider = self._make_provider()
+        self.assertEqual(provider.model_size, STT_MODEL_SIZE)
+        self.assertEqual(provider.device, STT_DEVICE)
+        self.assertEqual(provider.compute_type, STT_COMPUTE_TYPE)
 
     def test_successful_transcription(self):
         svc = STTService()
@@ -156,17 +160,17 @@ class TestSTTService(unittest.TestCase):
         self.assertEqual(result.text, "one. two.")
 
     def test_custom_constructor(self):
-        svc = STTService(model_size="base", device="cpu", compute_type="int8_float32")
-        svc.transcribe("a.wav")
-        self.assertEqual(svc.model_size, "base")
-        self.assertEqual(svc.compute_type, "int8_float32")
+        provider = self._make_provider(model_size="base", device="cpu", compute_type="int8_float32")
+        provider.transcribe("a.wav")
+        self.assertEqual(provider.model_size, "base")
+        self.assertEqual(provider.compute_type, "int8_float32")
         self.assertEqual(FakeWhisperModel.instances, 1)
 
 
 class TestSTTAPI(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.patcher = mock.patch("app.stt.service.WhisperModel", FakeWhisperModel)
+        cls.patcher = mock.patch("app.stt.faster_whisper_provider.WhisperModel", FakeWhisperModel)
         cls.patcher.start()
 
     @classmethod

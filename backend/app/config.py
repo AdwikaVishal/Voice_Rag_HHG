@@ -20,6 +20,10 @@ Environment variables:
 
 Speech-to-text (Segment 4A):
 
+* ``STT_PROVIDER``             — STT backend: ``faster_whisper`` (default, local) or ``sarvam`` (cloud)
+* ``SARVAM_API_KEY``           — Sarvam API key (required when provider is ``sarvam``)
+* ``SARVAM_MODEL``             — Sarvam model id (default ``sarvam_v1``)
+* ``SARVAM_LANGUAGE``          — Sarvam language hint (default ``auto``; e.g. ``en``, ``ur``)
 * ``STT_MODEL_SIZE``           — faster-whisper model size (default ``small``)
 * ``STT_DEVICE``               — device (default ``cpu``)
 * ``STT_COMPUTE_TYPE``         — CTranslate2 compute type (default ``int8``)
@@ -93,7 +97,12 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load .env file from backend folder
+load_dotenv(BASE_DIR / ".env")
 
 
 def _env(name: str, default: str) -> str:
@@ -117,7 +126,15 @@ RRF_K = float(_env("VOICE_RAG_RRF_K", "60"))
 DEFAULT_TOP_K = int(_env("VOICE_RAG_DEFAULT_TOP_K", "10"))
 MAX_TOP_K = int(_env("VOICE_RAG_MAX_TOP_K", "50"))
 
-# Speech-to-text (Segment 4A) — faster-whisper on CPU.
+# Speech-to-text (Segment 4A) — provider-based (faster-whisper or Sarvam).
+STT_PROVIDER = _env("STT_PROVIDER", "faster_whisper").strip().lower()
+
+# Sarvam cloud API settings (used only when STT_PROVIDER == "sarvam").
+SARVAM_API_KEY = _env("SARVAM_API_KEY", "")
+SARVAM_MODEL = _env("SARVAM_MODEL", "sarvam_v1")
+SARVAM_LANGUAGE = _env("SARVAM_LANGUAGE", "auto")
+
+# Faster-Whisper local model settings (used only when STT_PROVIDER == "faster_whisper").
 STT_MODEL_SIZE = _env("STT_MODEL_SIZE", "small")
 STT_DEVICE = _env("STT_DEVICE", "cpu")
 STT_COMPUTE_TYPE = _env("STT_COMPUTE_TYPE", "int8")

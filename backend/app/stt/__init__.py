@@ -1,7 +1,8 @@
-"""Speech-to-text (Segment 4A): faster-whisper STT service.
+"""Speech-to-text (Segment 4A): provider-based STT service.
 
-Exposes :class:`STTService` — a lazy, process-wide-reusable faster-whisper
-wrapper — and :data:`get_stt_service`, the singleton used by the API layer.
+Selects between Faster-Whisper (local) and Sarvam (cloud) via the
+``STT_PROVIDER`` environment variable.  Exposes :class:`STTService` and
+:data:`get_stt_service`, the singleton used by the API layer.
 """
 
 from __future__ import annotations

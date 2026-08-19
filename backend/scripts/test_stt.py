@@ -30,6 +30,7 @@ sys.path.insert(0, str(BASE_DIR))
 
 from app.config import STT_COMPUTE_TYPE, STT_DEVICE, STT_MODEL_SIZE  # noqa: E402
 from app.stt import STTService  # noqa: E402
+from app.stt.faster_whisper_provider import FasterWhisperProvider  # noqa: E402
 
 
 def main() -> None:
@@ -46,10 +47,10 @@ def main() -> None:
         raise SystemExit(1)
 
     load_start = time.perf_counter()
-    service = STTService(model_size=args.model, device=args.device, compute_type=args.compute_type)
+    provider = FasterWhisperProvider(model_size=args.model, device=args.device, compute_type=args.compute_type)
     print(f"Loading faster-whisper '{args.model}' (device={args.device}, "
           f"compute={args.compute_type}) ...")
-    result = service.transcribe(args.audio_path, language=args.language)
+    result = provider.transcribe(args.audio_path, language=args.language)
     load_ms = (time.perf_counter() - load_start) * 1000.0
 
     duration = result.duration_seconds

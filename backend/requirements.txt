@@ -13,5 +13,7 @@ faster-whisper==1.2.1
 ctranslate2==4.8.1
 av==18.1.0
 python-multipart==0.0.32
+requests>=2.28.0
+python-dotenv>=1.0.0
 # Segment 4D — text-to-speech (edge-tts = Microsoft Edge neural voices; no API key)
 edge-tts==7.2.8
