@@ -38,7 +38,7 @@ os.environ.setdefault("USE_JAX", "0")
 
 logger = logging.getLogger("retrieval.embeddings")
 
-DEFAULT_MODEL_NAME = "intfloat/multilingual-e5-small"
+DEFAULT_MODEL_NAME = os.getenv("EMBEDDING_MODEL", "intfloat/multilingual-e5-small")
 DEFAULT_DIMENSION = 384
 # Conservative CPU-friendly batch size; the corpus is embedded on a laptop CPU.
 DEFAULT_BATCH_SIZE = 32
