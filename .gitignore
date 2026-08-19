@@ -34,7 +34,7 @@ venv/
 .env
 
 # Generated retrieval data
-backend/data/indexes/
+#backend/data/indexes/
 backend/data/processed/chunks/
 
 # Generated evaluation/output files
